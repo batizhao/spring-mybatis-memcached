@@ -1,4 +1,4 @@
-spring-memecached-bootstrap
+spring-memcached-bootstrap
 ===========================
 
 Spring Memcached Bootstrap.
