@@ -1,11 +1,11 @@
 package me.batizhao.dao;
 
 import me.batizhao.model.User;
+import org.apache.ibatis.annotations.Select;
 
 public interface UserDao {
 
     void saveUser(User user);
 
-    //@Select(value = "SELECT * FROM user WHERE id = #{id}")
     User getUser(Long id);
 }
