@@ -1,0 +1,3 @@
+INSERT INTO user VALUES('1000','Tom');
+INSERT INTO user VALUES('1001','Jerry');
+

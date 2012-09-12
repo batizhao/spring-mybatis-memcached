@@ -1,18 +1,21 @@
-package me.batizhao.dao;
+package me.batizhao;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.springframework.test.AbstractDependencyInjectionSpringContextTests;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.AbstractJUnit4SpringContextTests;
+import org.springframework.test.context.junit4.AbstractTransactionalJUnit4SpringContextTests;
 
 /**
  * Base class for running DAO tests.
  * @author mraible
  */
 @ContextConfiguration(
-        locations={"classpath:/applicationContext.xml"
+        locations={"classpath:/applicationContext.xml",
+                   "classpath:/applicationContext-cache.xml"
         })
-public abstract class BaseDaoTestCase extends AbstractJUnit4SpringContextTests {
+public abstract class BaseDaoTestCase extends AbstractTransactionalJUnit4SpringContextTests {
     /**
      * Log variable for all child classes. Uses LogFactory.getLog(getClass()) from Commons Logging
      */
