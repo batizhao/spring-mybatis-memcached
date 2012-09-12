@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMapConfig PUBLIC "-//ibatis.apache.org//DTD SQL Map Config 2.0//EN"
+    "http://ibatis.apache.org/dtd/sql-map-config-2.dtd">
+
+<sqlMapConfig>
+    <settings enhancementEnabled="true" maxTransactions="20"
+        maxRequests="32" maxSessions="10"/>
+
+    <!-- Identify all SQL Map XML files to be loaded by this SQL map. Relative to classpath -->
+    <sqlMap resource="sqlmaps/RoleSQL.xml"/>
+    <sqlMap resource="sqlmaps/UserSQL.xml"/>
+    <sqlMap resource="sqlmaps/EntitiesSQL.xml"/>
+    <sqlMap resource="sqlmaps/ResourceSQL.xml"/>
+    <sqlMap resource="sqlmaps/AttachmentSQL.xml"/>
+    <sqlMap resource="sqlmaps/InformationReplySQL.xml"/>
+    <sqlMap resource="sqlmaps/InformationSQL.xml"/>
+    <sqlMap resource="sqlmaps/SystemCodeSQL.xml"/>
+    <sqlMap resource="sqlmaps/GroupSQL.xml"/>
+    <sqlMap resource="sqlmaps/CategorySQL.xml"/>
+	<sqlMap resource="sqlmaps/TreeTypeSQL.xml"/>
+	<sqlMap resource="sqlmaps/DeptTreeSQL.xml"/>
+	<sqlMap resource="sqlmaps/ContentSQL.xml"/>
+	<sqlMap resource="sqlmaps/MSGTemplateSQL.xml"/>
+	<sqlMap resource="sqlmaps/MSGRuleSQL.xml"/>
+	<sqlMap resource="sqlmaps/MSGInformationSQL.xml"/>
+	<sqlMap resource="sqlmaps/SpecialContentSQL.xml"/>
+	<sqlMap resource="sqlmaps/CommentSQL.xml"/>
+	<sqlMap resource="sqlmaps/DespachoSQL.xml"/>
+	
+
+	<sqlMap resource="sqlmaps/DocumentElementSQL.xml"/>
+	<sqlMap resource="sqlmaps/NodeSQL.xml"/>
+	<sqlMap resource="sqlmaps/PassSQL.xml"/>
+	<sqlMap resource="sqlmaps/HomePendingSQL.xml"/>
+	<sqlMap resource="sqlmaps/HomePluginSQL.xml"/>
+	<sqlMap resource="sqlmaps/HomeTemplateSQL.xml"/>
+	<sqlMap resource="sqlmaps/KeyWordSQL.xml"/>
+	<sqlMap resource="sqlmaps/DocConfigInfoSQL.xml"/>
+	<sqlMap resource="sqlmaps/ShouwenSQL.xml"/>
+	<sqlMap resource="sqlmaps/FawenSQL.xml"/>
+	<sqlMap resource="sqlmaps/SignatureSQL.xml"/>
+	<sqlMap resource="sqlmaps/SendEntitySQL.xml"/>
+
+	<sqlMap resource="sqlmaps/FlowSQL.xml"/>
+	<sqlMap resource="sqlmaps/FlowActorSQL.xml"/>
+
+	<sqlMap resource="sqlmaps/DocumentFileSQL.xml"/>
+	<sqlMap resource="sqlmaps/AdviceSQL.xml"/>
+    <sqlMap resource="sqlmaps/PrintCenterSQL.xml"/>
+    <sqlMap resource="sqlmaps/DocumentRecycleSQL.xml"/>
+    <sqlMap resource="sqlmaps/ArchiveSQL.xml"/>
+    <sqlMap resource="sqlmaps/LogSQL.xml"/>
+    <sqlMap resource="sqlmaps/DocumentInterruptedSQL.xml"/>
+    <sqlMap resource="sqlmaps/BackDocumentSQL.xml"/>
+    <sqlMap resource="sqlmaps/BaseDocumentSQL.xml"/>
+    <sqlMap resource="sqlmaps/SubFlowSQL.xml"/>
+</sqlMapConfig>
