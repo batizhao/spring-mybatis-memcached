@@ -9,7 +9,7 @@
         </layout>
     </appender>
 
-    <logger name="batizhao">
+    <logger name="me.batizhao">
         <level value="DEBUG"/>
     </logger>
 
@@ -17,7 +17,7 @@
         <level value="DEBUG"/>
     </logger>
 
-    <logger name="net.rubyeye.xmemcached">
+    <logger name="net.spy.memcached">
         <level value="DEBUG"/>
     </logger>
 

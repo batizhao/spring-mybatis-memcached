@@ -4,7 +4,7 @@
 
 <mapper namespace="me.batizhao.dao.UserDao">
 
-    <!--<cache type="org.mybatis.caches.memcached.LoggingMemcachedCache" />-->
+    <cache type="org.mybatis.caches.memcached.LoggingMemcachedCache" />
 
     <insert id="saveUser" parameterType="User">
         INSERT INTO user (id, name)

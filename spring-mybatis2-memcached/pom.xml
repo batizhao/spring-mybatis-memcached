@@ -11,5 +11,13 @@
 
     <artifactId>spring-mybatis2-memcached</artifactId>
 
+    <dependencies>
+        <dependency>
+            <groupId>com.google.code.simple-spring-memcached</groupId>
+            <artifactId>xmemcached-provider</artifactId>
+            <version>3.0.2</version>
+        </dependency>
+    </dependencies>
+
 
 </project>

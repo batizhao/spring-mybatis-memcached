@@ -25,10 +25,6 @@
         <level value="DEBUG"/>
     </logger>
 
-    <logger name="org.mybatis.caches.memcached">
-        <level value="DEBUG"/>
-    </logger>
-
     <root>
         <level value="WARN"/>
         <appender-ref ref="CONSOLE"/>

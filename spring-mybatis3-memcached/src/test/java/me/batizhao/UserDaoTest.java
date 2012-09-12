@@ -1,5 +1,6 @@
 package me.batizhao;
 
+import me.batizhao.dao.UserDao;
 import me.batizhao.model.User;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,29 +16,32 @@ public class UserDaoTest extends BaseDaoTestCase {
 
     @Test
     public void testSaveUser() throws Exception {
-        /*User user = new User();
+
+        User user = new User();
         user.setId(1002L);
         user.setName("Jacky");
 
-        userDao.saveUser(user);*/
+        userDao.saveUser(user);
 
-        User user = userDao.getUser(1001L);
+        user = userDao.getUser(1002L);
 
         assertNotNull(user);
-        assertTrue(user.getName().equals("Jerry"));
+        assertTrue(user.getName().equals("Jacky"));
 
         log.info("User: " + user);
 
     }
 
-    /*@Test
+    @Test
     public void testGetUser() throws Exception {
-        cacheUser = userDao.getUser(2000L);
 
-        log.info("cacheUser:" + cacheUser);
+        User user = userDao.getUser(1000L);
 
-        assertTrue(newUser.equals(cacheUser));
+        assertNotNull(user);
+        assertTrue(user.getName().equals("Tom"));
 
-    }*/
+        log.info("User: " + user);
+
+    }
 
 }

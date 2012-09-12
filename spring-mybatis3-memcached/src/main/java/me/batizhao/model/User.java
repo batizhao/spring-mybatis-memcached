@@ -1,6 +1,5 @@
 package me.batizhao.model;
 
-import com.google.code.ssm.api.CacheKeyMethod;
 import org.apache.commons.lang.builder.EqualsBuilder;
 import org.apache.commons.lang.builder.HashCodeBuilder;
 import org.apache.commons.lang.builder.ToStringBuilder;
@@ -17,7 +16,6 @@ public class User implements Serializable {
 
     private String name;
 
-    @CacheKeyMethod
     public Long getId() {
         return id;
     }
