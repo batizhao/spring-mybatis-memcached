@@ -4,25 +4,15 @@
 
 <mapper namespace="me.batizhao.dao.UserDao">
 
-    <cache type="org.mybatis.caches.memcached.LoggingMemcachedCache" />
+    <!--<cache type="org.mybatis.caches.memcached.LoggingMemcachedCache" />-->
 
     <insert id="saveUser" parameterType="User">
         INSERT INTO user (id, name)
         VALUES (#{id}, #{name})
     </insert>
 
-    <update id="updateUser" parameterType="User">
-        UPDATE user
-           SET name = #{name}
-         WHERE id = #{id}
-    </update>
-
     <select id="getUser" parameterType="Long" resultType="User">
         SELECT * FROM user WHERE id = #{id}
-    </select>
-
-    <select id="getUsers" resultType="User">
-        SELECT * FROM user
     </select>
 
 </mapper>

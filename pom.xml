@@ -12,6 +12,7 @@
         <module>mm-mybatis3-memcached</module>
         <module>ssm3-mybatis2-memcached</module>
         <module>ssm3-springcache-mybatis3-memcached</module>
+        <module>springcache-mybatis3</module>
     </modules>
 
     <repositories>

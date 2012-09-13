@@ -17,6 +17,7 @@ public class User implements Serializable {
 
     private String name;
 
+    @CacheKeyMethod
     public Long getId() {
         return id;
     }

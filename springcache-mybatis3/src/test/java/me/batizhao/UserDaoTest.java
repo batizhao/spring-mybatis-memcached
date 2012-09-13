@@ -4,11 +4,7 @@ import me.batizhao.dao.UserDao;
 import me.batizhao.model.User;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.test.annotation.Rollback;
 
-import java.util.List;
-
-import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
@@ -36,22 +32,6 @@ public class UserDaoTest extends BaseDaoTestCase {
     }
 
     @Test
-    public void testUpdateUser() throws Exception {
-        User user = new User();
-        user.setId(1000L);
-        user.setName("Obmar");
-
-        userDao.updateUser(user);
-
-        user = userDao.getUser(1000L);
-
-        assertNotNull(user);
-        assertEquals("Obmar", user.getName());
-
-        log.info("User: " + user);
-    }
-
-    @Test
     public void testGetUser() throws Exception {
 
         User user = userDao.getUser(1000L);
@@ -63,11 +43,4 @@ public class UserDaoTest extends BaseDaoTestCase {
 
     }
 
-    @Test
-    public void testGetUsers() throws Exception {
-        List list = userDao.getUsers();
-
-        assertNotNull(list);
-        assertEquals(2, list.size());
-    }
 }
