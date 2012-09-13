@@ -20,11 +20,11 @@
     </bean>-->
 
     <!-- easy way to test different types of serialization mechanizm by passing it as system property (-Dssm.provider=JSON) -->
-    <bean name="defaultSerializationTypeAsString" class="java.lang.String">
+    <bean id="defaultSerializationTypeAsString" class="java.lang.String">
         <constructor-arg value="#{systemProperties['ssm.defaultSerializationType']?:'JSON'}" />
     </bean>
 
-    <bean name="cacheManager" class="com.google.code.ssm.spring.SSMCacheManager">
+    <bean id="cacheManager" class="com.google.code.ssm.spring.SSMCacheManager">
         <property name="caches">
             <set>
                 <bean class="com.google.code.ssm.spring.SSMCache">
@@ -38,7 +38,7 @@
         </property>
     </bean>
 
-    <bean name="user" class="com.google.code.ssm.CacheFactory">
+    <bean id="user" class="com.google.code.ssm.CacheFactory">
         <property name="cacheName" value="user" />
         <property name="cacheClientFactory" ref="cacheClientFactory"/>
         <property name="addressProvider">
@@ -61,6 +61,6 @@
         <property name="targetMethod" value="flush" />
     </bean>-->
 
-    <bean name="cacheClientFactory" class="com.google.code.ssm.providers.xmemcached.MemcacheClientFactoryImpl" />
+    <bean id="cacheClientFactory" class="com.google.code.ssm.providers.xmemcached.MemcacheClientFactoryImpl" />
 
 </beans>
