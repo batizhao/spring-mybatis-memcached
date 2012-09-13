@@ -4,13 +4,14 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>spring-memcached-bootstrap</groupId>
-    <artifactId>spring-memcached-bootstrap</artifactId>
+    <groupId>me.batizhao.smm</groupId>
+    <artifactId>spring-mybatis-memcached</artifactId>
     <packaging>pom</packaging>
     <version>1.0</version>
     <modules>
-        <module>spring-mybatis2-memcached</module>
-        <module>spring-mybatis3-memcached</module>
+        <module>mm-mybatis3-memcached</module>
+        <module>ssm3-mybatis2-memcached</module>
+        <module>ssm3-springcache-mybatis3-memcached</module>
     </modules>
 
     <repositories>
@@ -29,6 +30,21 @@
     </repositories>
 
     <dependencies>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-core</artifactId>
+            <version>3.1.2.RELEASE</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-tx</artifactId>
+            <version>3.1.2.RELEASE</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-jdbc</artifactId>
+            <version>3.1.2.RELEASE</version>
+        </dependency>
         <!--<dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-web</artifactId>
@@ -100,7 +116,7 @@
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-test</artifactId>
-            <version>3.1.1.RELEASE</version>
+            <version>3.1.2.RELEASE</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
@@ -112,6 +128,4 @@
             </testResource>
         </testResources>
     </build>
-
-    
 </project>

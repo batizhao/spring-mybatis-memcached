@@ -9,6 +9,10 @@
     <import resource="simplesm-context.xml" />
     <aop:aspectj-autoproxy />
 
+    <bean name="defaultSerializationTypeAsString" class="java.lang.String">
+        <constructor-arg value="#{systemProperties['ssm.defaultSerializationType']?:'JSON'}" />
+    </bean>
+
     <bean name="defaultMemcachedClient" class="com.google.code.ssm.CacheFactory">
         <property name="cacheClientFactory">
             <bean class="com.google.code.ssm.providers.xmemcached.MemcacheClientFactoryImpl" />
@@ -23,6 +27,8 @@
                 <property name="consistentHashing" value="true" />
             </bean>
         </property>
+        <property name="defaultSerializationType"
+                  value="#{T(com.google.code.ssm.api.format.SerializationType).valueOf(@defaultSerializationTypeAsString)}" />
         <!--<property name="jsonTranscoder">
             <bean class="com.google.code.ssm.transcoders.JsonTranscoder">
                 <constructor-arg index="0" ref="jsonObjectMapper"/>
