@@ -25,6 +25,10 @@
         <level value="DEBUG"/>
     </logger>
 
+    <logger name="org.springframework.cache">
+        <level value="DEBUG"/>
+    </logger>
+
     <logger name="org.mybatis.caches.memcached">
         <level value="DEBUG"/>
     </logger>
