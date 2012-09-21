@@ -4,4 +4,5 @@
 
 <sqlMapConfig>
     <sqlMap resource="sqlmaps/UserSQL.xml"/>
+    <sqlMap resource="sqlmaps/RoleSQL.xml"/>
 </sqlMapConfig>

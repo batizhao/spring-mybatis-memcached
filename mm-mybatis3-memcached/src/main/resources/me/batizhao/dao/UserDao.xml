@@ -25,4 +25,10 @@
         SELECT * FROM user
     </select>
 
+    <select id="getUsersByRoleId" resultType="User">
+        SELECT u.id, u.name, r.id as "role.id", r.name as "role.name"
+          FROM user u, user_role ur, role r
+         WHERE u.id = ur.userid and r.id = ur.roleid and ur.roleid = #{id}
+    </select>
+
 </mapper>

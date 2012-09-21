@@ -21,12 +21,12 @@ public class UserDaoTest extends BaseDaoTestCase {
     public void testSaveUser() throws Exception {
 
         User user = new User();
-        user.setId(1002L);
+        user.setId(1010L);
         user.setName("Jacky");
 
         userDao.saveUser(user);
 
-        user = userDao.getUser(1002L);
+        user = userDao.getUser(1010L);
 
         assertNotNull(user);
         assertTrue(user.getName().equals("Jacky"));
@@ -36,17 +36,18 @@ public class UserDaoTest extends BaseDaoTestCase {
     }
 
     @Test
+    //@Rollback(value = false)
     public void testUpdateUser() throws Exception {
         User user = new User();
         user.setId(1000L);
-        user.setName("Obmar");
+        user.setName("Tom");
 
         userDao.updateUser(user);
 
         user = userDao.getUser(1000L);
 
         assertNotNull(user);
-        assertEquals("Obmar", user.getName());
+        assertEquals("Tom", user.getName());
 
         log.info("User: " + user);
     }
@@ -69,5 +70,15 @@ public class UserDaoTest extends BaseDaoTestCase {
 
         assertNotNull(list);
         assertEquals(2, list.size());
+    }
+
+    @Test
+    public void testGetUsersByRoleId() throws Exception {
+        List list = userDao.getUsersByRoleId(1L);
+
+        assertNotNull(list);
+        assertEquals(2, list.size());
+
+        log.info("UserList: " + list);
     }
 }

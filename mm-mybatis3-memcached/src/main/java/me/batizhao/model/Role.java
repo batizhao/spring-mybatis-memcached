@@ -1,24 +1,19 @@
 package me.batizhao.model;
 
-import com.sun.xml.internal.ws.message.RootElementSniffer;
 import org.apache.commons.lang.builder.EqualsBuilder;
 import org.apache.commons.lang.builder.HashCodeBuilder;
 import org.apache.commons.lang.builder.ToStringBuilder;
 import org.apache.commons.lang.builder.ToStringStyle;
 
 import java.io.Serializable;
-import java.util.List;
 
+public class Role implements Serializable {
 
-public class User implements Serializable {
-
-    private static final long serialVersionUID = -822125371522084989L;
+    private static final long serialVersionUID = -4708064835003250669L;
 
     private Long id;
 
     private String name;
-
-    private Role role;
 
     public Long getId() {
         return id;
@@ -34,14 +29,6 @@ public class User implements Serializable {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public Role getRole() {
-        return role;
-    }
-
-    public void setRole(Role role) {
-        this.role = role;
     }
 
     public boolean equals(Object obj) {

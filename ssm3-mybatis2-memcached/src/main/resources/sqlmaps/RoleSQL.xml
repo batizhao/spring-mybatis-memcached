@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN"
+        "http://www.ibatis.com/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="RoleSQL">
+
+    <typeAlias alias="role" type="me.batizhao.model.Role"/>
+
+    <insert id="saveRole" parameterClass="role">
+        INSERT INTO role (id, name)
+        VALUES (#id#, #name#)
+    </insert>
+
+    <update id="updateRole" parameterClass="role">
+        UPDATE role
+        SET name = #name#
+        WHERE id = #id#
+    </update>
+
+    <select id="getRole" parameterClass="java.lang.Long" resultClass="role">
+        SELECT * FROM role WHERE id = #id#
+    </select>
+
+    <select id="getRoles" resultClass="role">
+        SELECT * FROM role
+    </select>
+
+</sqlMap>

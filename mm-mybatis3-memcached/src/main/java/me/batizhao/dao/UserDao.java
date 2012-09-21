@@ -1,7 +1,6 @@
 package me.batizhao.dao;
 
 import me.batizhao.model.User;
-import org.apache.ibatis.annotations.Select;
 
 import java.util.List;
 
@@ -14,4 +13,6 @@ public interface UserDao {
     User getUser(Long id);
 
     List<User> getUsers();
+
+    List<User> getUsersByRoleId(Long id);
 }

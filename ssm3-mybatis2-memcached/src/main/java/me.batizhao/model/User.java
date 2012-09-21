@@ -17,7 +17,13 @@ public class User implements Serializable {
 
     private String name;
 
+    private Role role;
+
     @CacheKeyMethod
+    public String cacheKey() {
+        return id.toString();
+    }
+
     public Long getId() {
         return id;
     }
@@ -32,6 +38,14 @@ public class User implements Serializable {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public Role getRole() {
+        return role;
+    }
+
+    public void setRole(Role role) {
+        this.role = role;
     }
 
     public boolean equals(Object obj) {

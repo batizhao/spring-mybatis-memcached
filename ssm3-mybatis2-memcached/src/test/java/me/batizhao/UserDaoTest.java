@@ -5,6 +5,9 @@ import me.batizhao.model.User;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import java.util.List;
+
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
@@ -32,6 +35,23 @@ public class UserDaoTest extends BaseDaoTestCase {
     }
 
     @Test
+    //@Rollback(value = false)
+    public void testUpdateUser() throws Exception {
+        User user = new User();
+        user.setId(1000L);
+        user.setName("Tom");
+
+        userDao.updateUser(user);
+
+        user = userDao.getUser(1000L);
+
+        assertNotNull(user);
+        assertEquals("Tom", user.getName());
+
+        log.info("User: " + user);
+    }
+
+    @Test
     public void testGetUser() throws Exception {
 
         User user = userDao.getUser(1000L);
@@ -41,6 +61,16 @@ public class UserDaoTest extends BaseDaoTestCase {
 
         log.info("User: " + user);
 
+    }
+
+    @Test
+    public void testGetUsersByRoleId() throws Exception {
+        List list = userDao.getUsersByRoleId(1L);
+
+        assertNotNull(list);
+        assertEquals(2, list.size());
+
+        log.info("UserList: " + list);
     }
 
 }

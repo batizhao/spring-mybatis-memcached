@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="me.batizhao.dao.RoleDao">
+
+    <cache type="org.mybatis.caches.memcached.LoggingMemcachedCache" />
+
+    <insert id="saveRole" parameterType="Role">
+        INSERT INTO role (id, name)
+        VALUES (#{id}, #{name})
+    </insert>
+
+    <update id="updateRole" parameterType="Role">
+        UPDATE role
+           SET name = #{name}
+         WHERE id = #{id}
+    </update>
+
+    <select id="getRole" parameterType="Long" resultType="Role">
+        SELECT * FROM role WHERE id = #{id}
+    </select>
+
+    <select id="getRoles" resultType="Role">
+        SELECT * FROM role
+    </select>
+
+</mapper>
