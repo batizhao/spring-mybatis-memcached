@@ -1,6 +1,5 @@
-package me.batizhao;
+package me.batizhao.dao;
 
-import me.batizhao.dao.UserDao;
 import me.batizhao.model.User;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;

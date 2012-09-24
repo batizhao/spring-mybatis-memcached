@@ -1,6 +1,5 @@
-package me.batizhao;
+package me.batizhao.dao;
 
-import me.batizhao.dao.RoleDao;
 import me.batizhao.model.Role;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;

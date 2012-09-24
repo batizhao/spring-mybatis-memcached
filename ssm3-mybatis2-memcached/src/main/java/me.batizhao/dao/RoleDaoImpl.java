@@ -22,7 +22,6 @@ public class RoleDaoImpl implements RoleDao {
 
     @Override
     @UpdateSingleCache(namespace = "role", expiration = 60)
-    @InvalidateSingleCache(namespace = "user/list")
     public void updateRole(@ParameterValueKeyProvider @ParameterDataUpdateContent Role role) {
         sqlMapClientTemplate.update("updateRole", role);
     }
