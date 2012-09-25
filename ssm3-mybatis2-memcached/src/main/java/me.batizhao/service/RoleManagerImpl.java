@@ -20,4 +20,9 @@ public class RoleManagerImpl implements RoleManager {
         roleDao.updateRole(role);
         userCache.invalidateGetUsersByRoleId(role.getId());
     }
+
+    @Override
+    public Role getRole(Long id) {
+        return roleDao.getRole(id);
+    }
 }

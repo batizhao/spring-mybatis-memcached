@@ -6,6 +6,8 @@ import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.annotation.Rollback;
 
+import static org.junit.Assert.assertEquals;
+
 public class RoleManagerTest extends BaseDaoTestCase{
 
     @Autowired
@@ -19,5 +21,12 @@ public class RoleManagerTest extends BaseDaoTestCase{
         role.setName("ROLE_ADMIN");
 
         roleManager.updateRole(role);
+
+        role = roleManager.getRole(1L);
+
+        log.info("Role: " + role);
+
+        assertEquals("ROLE_ADMIN", role.getName());
+
     }
 }

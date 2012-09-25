@@ -1,6 +1,5 @@
 package me.batizhao.cache;
 
-import com.google.code.ssm.api.InvalidateMultiCache;
 import com.google.code.ssm.api.InvalidateSingleCache;
 import com.google.code.ssm.api.ParameterValueKeyProvider;
 import org.springframework.stereotype.Component;
@@ -10,6 +9,5 @@ public class UserCache {
 
     @InvalidateSingleCache(namespace = "user/list")
     public void invalidateGetUsersByRoleId(@ParameterValueKeyProvider Long id){
-         System.out.print("invalidateGetUsersByRoleId:" + id);
     }
 }

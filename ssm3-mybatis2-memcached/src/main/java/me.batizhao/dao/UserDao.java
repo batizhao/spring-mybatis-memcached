@@ -13,4 +13,8 @@ public interface UserDao{
     void updateUser(User user);
 
     List<User> getUsersByRoleId(Long id);
+
+    List<String> getMultiCache(List<Long> keys);
+
+    List<User> getUsersByUserIds(List<Long> ids);
 }

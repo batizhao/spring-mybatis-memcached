@@ -4,6 +4,7 @@ import me.batizhao.model.User;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import static org.junit.Assert.assertEquals;
@@ -72,4 +73,32 @@ public class UserDaoTest extends BaseDaoTestCase {
         log.info("UserList: " + list);
     }
 
+    @Test
+    public void testGetUsersByUserIds() throws Exception {
+        List<Long> list = new ArrayList<Long>();
+        list.add(1L);
+        list.add(2L);
+
+        List users = userDao.getUsersByUserIds(list);
+
+        assertNotNull(users);
+        assertEquals(3, users.size());
+
+        log.info("users: " + users);
+    }
+
+    @Test
+    public void testGetMultiCache() throws Exception {
+        List<Long> list = new ArrayList<Long>();
+        list.add(1L);
+        list.add(2L);
+        list.add(3L);
+
+        List<String> strings = userDao.getMultiCache(list);
+
+        log.info("strings: " + strings);
+
+        assertNotNull(strings);
+        assertEquals(3, strings.size());
+    }
 }
