@@ -27,7 +27,7 @@
         WHERE u.id = ur.userid and r.id = ur.roleid and ur.roleid = #id#
     </select>
 
-    <select id="getUsersByUserIds" parameterClass="java.util.List" resultClass="user">
+    <select id="getUsersByRoleIds" parameterClass="java.util.List" resultClass="user">
         SELECT u.id, u.name, r.id as "role.id", r.name as "role.name"
         FROM user u, user_role ur, role r
         WHERE u.id = ur.userid and r.id = ur.roleid and ur.roleid in

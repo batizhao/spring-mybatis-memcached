@@ -5,6 +5,7 @@ import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import static org.junit.Assert.assertEquals;
@@ -74,17 +75,15 @@ public class UserDaoTest extends BaseDaoTestCase {
     }
 
     @Test
-    public void testGetUsersByUserIds() throws Exception {
-        List<Long> list = new ArrayList<Long>();
-        list.add(1L);
-        list.add(2L);
+    public void testGetUsersByRoleIds() throws Exception {
+        List<Long> list = Arrays.asList(1L, 2L);
 
-        List users = userDao.getUsersByUserIds(list);
+        List users = userDao.getUsersByRoleIds(list);
+
+        log.info("users: " + users);
 
         assertNotNull(users);
         assertEquals(3, users.size());
-
-        log.info("users: " + users);
     }
 
     @Test

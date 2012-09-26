@@ -1,16 +1,11 @@
 package me.batizhao.dao;
 
 import com.google.code.ssm.api.*;
-import com.google.code.ssm.api.format.Serialization;
-import com.google.code.ssm.api.format.SerializationType;
-import com.ibatis.sqlmap.client.SqlMapClient;
 import me.batizhao.model.User;
 import org.apache.commons.lang.RandomStringUtils;
 import org.apache.commons.lang.math.RandomUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.orm.ibatis.SqlMapClientTemplate;
-import org.springframework.orm.ibatis.support.SqlMapClientDaoSupport;
 import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
@@ -46,9 +41,9 @@ public class UserDaoImpl implements UserDao {
     }
 
     @Override
-    @ReadThroughMultiCache(namespace = "user/getUsersByUserIds", expiration = 600)
-    public List<User> getUsersByUserIds(@ParameterValueKeyProvider final List<Long> ids) {
-        return (List<User>) sqlMapClientTemplate.queryForList("getUsersByUserIds", ids);
+    @ReadThroughMultiCache(namespace = "user/getUsersByUserIds", expiration = 60, option = @ReadThroughMultiCacheOption(generateKeysFromResult = true))
+    public List<User> getUsersByRoleIds(@ParameterValueKeyProvider final List<Long> ids) {
+        return (List<User>) sqlMapClientTemplate.queryForList("getUsersByRoleIds", ids);
     }
 
     @Override

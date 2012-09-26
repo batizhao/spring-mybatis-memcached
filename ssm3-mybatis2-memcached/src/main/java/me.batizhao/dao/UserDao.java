@@ -16,5 +16,5 @@ public interface UserDao{
 
     List<String> getMultiCache(List<Long> keys);
 
-    List<User> getUsersByUserIds(List<Long> ids);
+    List<User> getUsersByRoleIds(List<Long> ids);
 }

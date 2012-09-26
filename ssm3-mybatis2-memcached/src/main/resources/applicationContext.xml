@@ -10,17 +10,17 @@
      http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd">
 
     <!-- in-memory me.batizhao.database and a datasource -->
-    <!--<jdbc:embedded-database id="dataSource">
+    <jdbc:embedded-database id="dataSource">
         <jdbc:script location="classpath:database/jpetstore-hsqldb-schema.sql"/>
         <jdbc:script location="classpath:database/jpetstore-hsqldb-dataload.sql"/>
-    </jdbc:embedded-database>-->
+    </jdbc:embedded-database>
 
     <bean id="sqlMapClient" class="org.springframework.orm.ibatis.SqlMapClientFactoryBean">
         <property name="configLocation" value="classpath:/sql-map-config.xml"/>
         <property name="dataSource" ref="dataSource"/>
     </bean>
 
-    <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">
+    <!--<bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">
         <property name="url" value="jdbc:mysql://127.0.0.1/cache" />
         <property name="username" value="root" />
         <property name="password" value="" />
@@ -42,7 +42,7 @@
 
         <property name="poolPreparedStatements" value="true" />
         <property name="maxPoolPreparedStatementPerConnectionSize" value="20" />
-    </bean>
+    </bean>-->
 
     <!-- transaction manager, use JtaTransactionManager for global tx -->
     <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
