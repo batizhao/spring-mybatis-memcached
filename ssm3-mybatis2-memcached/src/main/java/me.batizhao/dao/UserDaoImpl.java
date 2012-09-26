@@ -41,7 +41,7 @@ public class UserDaoImpl implements UserDao {
     }
 
     @Override
-    @ReadThroughMultiCache(namespace = "user/getUsersByUserIds", expiration = 60, option = @ReadThroughMultiCacheOption(generateKeysFromResult = true))
+    @ReadThroughMultiCache(namespace = "user/getUsersByRoleIds", expiration = 60, option = @ReadThroughMultiCacheOption(generateKeysFromResult = true))
     public List<User> getUsersByRoleIds(@ParameterValueKeyProvider final List<Long> ids) {
         return (List<User>) sqlMapClientTemplate.queryForList("getUsersByRoleIds", ids);
     }
