@@ -21,19 +21,46 @@
         SELECT * FROM user WHERE id = #id#
     </select>
 
+    <select id="getUsersByUserIds" parameterClass="list" resultClass="user">
+        SELECT u.id, u.name
+        FROM user u
+        WHERE u.id in
+        (<iterate conjunction=",">
+            #ids[]#
+        </iterate>)
+    </select>
+
+    <update id="updateUsersByUserIds" parameterClass="list">
+        UPDATE user
+        SET name = #name#
+        WHERE id in
+        (<iterate conjunction=",">
+            #ids[]#
+        </iterate>)
+    </update>
+
     <select id="getUsersByRoleId" parameterClass="java.lang.Long" resultClass="user">
         SELECT u.id, u.name, r.id as "role.id", r.name as "role.name"
         FROM user u, user_role ur, role r
         WHERE u.id = ur.userid and r.id = ur.roleid and ur.roleid = #id#
     </select>
 
-    <select id="getUsersByRoleIds" parameterClass="java.util.List" resultClass="user">
+    <select id="getUsersByRoleIds" parameterClass="list" resultClass="user">
         SELECT u.id, u.name, r.id as "role.id", r.name as "role.name"
         FROM user u, user_role ur, role r
         WHERE u.id = ur.userid and r.id = ur.roleid and ur.roleid in
         (<iterate conjunction=",">
             #ids[]#
-        </iterate>)
+        </iterate>) order by r.id
+    </select>
+
+    <select id="getUsersByRoles" parameterClass="list" resultClass="user">
+        SELECT u.id, u.name, r.id as "role.id", r.name as "role.name"
+        FROM user u, user_role ur, role r
+        WHERE u.id = ur.userid and r.id = ur.roleid and ur.roleid in
+        (<iterate conjunction=",">
+            #roles[].id#
+        </iterate>) order by r.id
     </select>
 
 </sqlMap>

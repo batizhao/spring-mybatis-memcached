@@ -1,8 +1,10 @@
 package me.batizhao.dao;
 
+import me.batizhao.model.Role;
 import me.batizhao.model.User;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.test.annotation.Rollback;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -87,17 +89,62 @@ public class UserDaoTest extends BaseDaoTestCase {
     }
 
     @Test
-    public void testGetMultiCache() throws Exception {
-        List<Long> list = new ArrayList<Long>();
-        list.add(1L);
-        list.add(2L);
-        list.add(3L);
+    public void testGetUsersByRoles() throws Exception {
+        Role role1 = new Role();
+        role1.setId(1L);
 
-        List<String> strings = userDao.getMultiCache(list);
+        Role role2 = new Role();
+        role2.setId(2L);
 
-        log.info("strings: " + strings);
+        List<Role> list = Arrays.asList(role1, role2);
 
-        assertNotNull(strings);
-        assertEquals(3, strings.size());
+        List users = userDao.getUsersByRoles(list);
+
+        log.info("users: " + users);
+
+        assertNotNull(users);
+        assertEquals(3, users.size());
+    }
+
+    @Test
+    public void testGetUsersByUserIds() throws Exception {
+        List<Long> list = Arrays.asList(1000L, 1001L);
+
+        List users = userDao.getUsersByUserIds(list);
+
+        log.info("users: " + users);
+
+        assertNotNull(users);
+        assertEquals(2, users.size());
+    }
+
+    @Test
+    @Rollback(value = false)
+    public void testUpdateUsersByUserIds() throws Exception {
+        User user1 = new User();
+        user1.setId(1000L);
+        user1.setName("Messi");
+
+        User user2 = new User();
+        user2.setId(1001L);
+        user2.setName("Vpersi");
+
+        List<User> list = Arrays.asList(user1, user2);
+
+        userDao.updateUsersByUserIds(list);
+
+        User user = userDao.getUser(1000L);
+
+        assertNotNull(user);
+        assertTrue(user.getName().equals("Messi"));
+
+        log.info("User1: " + user);
+
+        user = userDao.getUser(1001L);
+
+        assertNotNull(user);
+        assertTrue(user.getName().equals("Vpersi"));
+
+        log.info("User2: " + user);
     }
 }
