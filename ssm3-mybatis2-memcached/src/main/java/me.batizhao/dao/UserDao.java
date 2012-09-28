@@ -39,6 +39,12 @@ public interface UserDao{
     void updateUsersByUserIds(List<User> users);
 
     List<User> getUsersByRoleId(Long id);
+
+    /**
+     * \\@ReadThroughAssignCache demo
+     * @param ids
+     * @return
+     */
     List<User> getUsersByRoleIds(List<Long> ids);
     List<User> getUsersByRoles(List<Role> roles);
 }
