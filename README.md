@@ -35,4 +35,4 @@ namespace 下边的查询缓存是这样被保存在 memcached 的
 * [使用 Simple-Spring-Memcached Annotation](http://batizhao.github.com/java/2012/09/27/simple-spring-memcached-annotation/)
 * [使用 Simple-Spring-Memcached: SingleCache](http://batizhao.github.com/java/2012/09/27/using-simple-spring-memcached-one/)
 * [使用 Simple-Spring-Memcached: MultiCache](http://batizhao.github.com/java/2012/09/27/using-simple-spring-memcached-two/)
-* [http://batizhao.github.com/java/2012/09/28/using-simple-spring-memcached-three/](http://batizhao.github.com/java/2012/09/28/using-simple-spring-memcached-three/)         
+* [使用 Simple-Spring-Memcached: AssignCache](http://batizhao.github.com/java/2012/09/28/using-simple-spring-memcached-three/)         
