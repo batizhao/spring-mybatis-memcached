@@ -6,6 +6,8 @@ import me.batizhao.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.orm.ibatis.SqlMapClientTemplate;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -28,6 +30,7 @@ public class RoleDaoImpl implements RoleDao {
 
     @Override
     @ReadThroughSingleCache(namespace = "role", expiration = 60)
+    //@Transactional(propagation = Propagation.REQUIRED)
     public Role getRole(@ParameterValueKeyProvider Long id) {
         return (Role) sqlMapClientTemplate.queryForObject("getRole", id);
     }

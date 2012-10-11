@@ -23,12 +23,12 @@ public class UserDaoTest extends BaseDaoTestCase {
     public void testSaveUser() throws Exception {
 
         User user = new User();
-        user.setId(1002L);
+        user.setId(1003L);
         user.setName("Jacky");
 
         userDao.saveUser(user);
 
-        user = userDao.getUser(1002L);
+        user = userDao.getUser(1003L);
 
         assertNotNull(user);
         assertTrue(user.getName().equals("Jacky"));

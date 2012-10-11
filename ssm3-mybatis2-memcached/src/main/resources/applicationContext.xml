@@ -52,7 +52,7 @@
     <context:component-scan base-package="me.batizhao"/>
 
     <!-- enable transaction demarcation with annotations -->
-    <tx:annotation-driven/>
+    <tx:annotation-driven order="2000"/>
 
     <bean id="sqlMapClientTemplate" class="org.springframework.orm.ibatis.SqlMapClientTemplate">
         <property name="dataSource" ref="dataSource" />
