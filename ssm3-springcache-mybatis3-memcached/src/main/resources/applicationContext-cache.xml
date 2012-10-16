@@ -47,8 +47,9 @@
             </bean>
         </property>
         <property name="configuration">
-            <bean class="com.google.code.ssm.providers.CacheConfiguration">
+            <bean class="com.google.code.ssm.providers.xmemcached.XMemcachedConfiguration">
                 <property name="consistentHashing" value="true" />
+                <property name="connectionPoolSize" value="30" />
             </bean>
         </property>
         <property name="defaultSerializationType"
